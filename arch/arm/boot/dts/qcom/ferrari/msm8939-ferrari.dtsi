@@ -18,6 +18,7 @@
 #include "msm8939-ferrari-touchscreen.dtsi"
 #include "msm8939-ferrari-leds.dtsi"
 #include "msm8939-ferrari-sensors.dtsi"
+#include "msm8939-ferrari-ramoops.dtsi"
 #include "msm8939-camera-sensor-ferrari.dtsi"
 
 #include "dsi-panel-sharp-r69431-720p-video.dtsi"
