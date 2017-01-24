@@ -324,8 +324,25 @@
 		clock-names = "cam_src_clk", "cam_clk";
 	};
 
+	led_flash1: qcom,lm3646@ce {
+		cell-index = <0>;
+		reg = <0xce>;
+		qcom,slave-id = <0xce 0x00 0x11>;
+		compatible = "qcom,lm3646";
+		label = "lm3646";
+		qcom,flash-type = <1>;
+		qcom,gpio-no-mux = <0>;
+		gpios = <&msm_gpio 68 0>;
+		qcom,gpio-flash-en = <0>;
+		qcom,gpio-req-tbl-num = <0>;
+		qcom,gpio-req-tbl-flags = <0>;
+		qcom,gpio-req-tbl-label = "FLASH_EN";
+		qcom,cci-master = <0>;
+	};
+
 	qcom,camera@0 {
 		qcom,eeprom-src = <&eeprom20 &eeprom34>;
+		qcom,led-flash-src = <&led_flash1>;
 	};
 
 	qcom,camera@1 {
