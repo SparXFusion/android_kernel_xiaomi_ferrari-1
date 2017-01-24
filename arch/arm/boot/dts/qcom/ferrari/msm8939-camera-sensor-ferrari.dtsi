@@ -10,13 +10,6 @@
  * GNU General Public License for more details.
  */
 
-&tlmm_pinmux {
-	cam_sensor_flash {
-		qcom,num-grp-pins = <0x2>;
-		qcom,pins = <&gp 68>,<&gp 31>;
-	};
-};
-
 &cci {
 
 	eeprom20: qcom,eeprom@20 {
@@ -340,24 +333,5 @@
 	};
 
 	/delete-node/ qcom,camera@78;
-	/delete-node/ qcom,led-flash@66;
-
-	led_flash0: qcom,led-flash@66 {
-		cell-index = <0>;
-		reg = <0xce>;
-		qcom,slave-id = <0xce 0x00 0x11>;
-		compatible = "qcom,led-flash";
-		label = "lm3646";
-		qcom,flash-type = <1>;
-		qcom,gpio-no-mux = <0>;
-		gpios = <&msm_gpio 68 0>,
-				<&msm_gpio 31 0>;
-		qcom,gpio-flash-en = <0>;
-		qcom,gpio-flash-now = <1>;
-		qcom,gpio-req-tbl-num = <0 1>;
-		qcom,gpio-req-tbl-flags = <0 0>;
-		qcom,gpio-req-tbl-label = "FLASH_EN", "FLASH_NOW";
-		qcom,cci-master = <0>;
-	};
 
 };
